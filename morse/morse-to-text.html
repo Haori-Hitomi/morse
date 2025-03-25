@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="fa">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>مورس به متن</title>
+    <link rel="icon" type="image/png" href="photo/logo.png">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"></script>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <style>
+        body {
+            background-color: #f8f9fa;
+            font-family: 'Shabnam', sans-serif;
+
+        }
+        .container {
+            max-width: 600px;
+            margin-top: 50px;
+        }
+
+        @font-face {
+            font-family: 'Shabnam';
+            src: url('Fonts/Shabnam.ttf') format('woff2');
+            font-weight: normal;
+            font-style: normal;
+        }
+
+        .btn-link {
+            text-decoration: none;
+            color: inherit;
+        }
+
+    </style>
+</head>
+<body style="font-family: Shabnam;">
+    <nav class="navbar navbar-dark bg-dark fixed-top" dir="rtl">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">مترجم مورس به متن</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasDarkNavbar" aria-controls="offcanvasDarkNavbar" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="offcanvas offcanvas-end text-bg-dark" tabindex="-1" id="offcanvasDarkNavbar" aria-labelledby="offcanvasDarkNavbarLabel">
+                <div class="offcanvas-header text-center"> 
+                    <h5 class="offcanvas-title w-100" id="offcanvasDarkNavbarLabel">مترجم مورس به متن</h5>
+                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                </div>
+                <div class="offcanvas-body text-center"> 
+                    <ul class="navbar-nav justify-content-center flex-grow-1">
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="index.html">خانه</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="text-to-morse.html">متن به مورس</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="morse-to-text.html">مورس به متن</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="more/Learn-more.html">بیشتر بدانید</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="more/about.html">درباره من</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </nav>
+    
+    
+    
+
+<br><br>
+
+    <div class="container text-center">
+        <h1 class="mb-4">مترجم کد مورس به متن</h1>        
+        <p id="I1" class="alert alert-danger">
+            از علامت / به عنوان خط فاصله استفاده کنید
+        </p>
+        <p id="I2" class="alert alert-danger">
+            مطالب ترجمه شده به زبان انگلیسی میباشند
+        </p>
+        <textarea id="morseInput" class="form-control mb-3" style="text-align: center;" rows="4" placeholder="کد مورس را وارد کنید"></textarea>
+        <button class="btn btn-primary" onclick="translateMorse()">ترجمه</button>
+        <h3 class="mt-3">متن ترجمه شده</h3>
+        <p id="translatedText" class="alert alert-secondary"></p>
+        <button class="btn btn-info mt-3" onclick="copyTranslatedText()"><img src="photo/copy.svg">&nbsp; کپی متن</button>      
+        <br>
+        <a href="text-to-morse.html" class="btn btn-outline-warning mt-3">ترجمه متن به مورس</a>
+
+    </div>
+
+    <script>
+        const morseCode = {
+            '.-':    'A',
+            '-...':  'B',
+            '-.-.':  'C',
+            '-..':   'D',
+            '.':     'E',
+            '..-.':  'F',
+            '--.':   'G',
+            '....':  'H',
+            '..':    'I',
+            '.---':  'J',
+            '-.-':   'K',
+            '.-..':  'L',
+            '--':    'M',
+            '-.':    'N',
+            '---':   'O',
+            '.--.':  'P',
+            '--.-':  'Q',
+            '.-.':   'R',
+            '...':   'S',
+            '-':     'T',
+            '..-':   'U',
+            '...-':  'V',
+            '.--':   'W',
+            '-..-':  'X',
+            '-.--':  'Y',
+            '--..':  'Z',
+            '-----': '0',
+            '.----': '1',
+            '..---': '2',
+            '...--': '3',
+            '....-': '4',
+            '.....': '5',
+            '-....': '6',
+            '--...': '7',
+            '---..': '8',
+            '----.': '9',
+            '..--..': '?',
+            '-.-.--': '!',
+            '.-.-.-': '.',
+            '--..--': ',',
+            '-.-.-.': ';',
+            '---...': ':',
+            '.-.-.': '+' ,
+            '-....-': '-',
+            '-..-.': '/',
+            '-...-':'=',
+
+        };
+        
+        function translateMorse() {
+            const input = document.getElementById("morseInput").value.trim();
+            const words = input.split(" /"); 
+            const translated = words.map(word =>
+                word.split(" ").map(symbol => morseCode[symbol] || "").join("")
+            ).join(" ");
+            
+            document.getElementById("translatedText").textContent = translated;
+        }
+      
+        function copyTranslatedText() {
+    const translatedText = document.getElementById("translatedText").textContent;
+    navigator.clipboard.writeText(translatedText).then(() => {
+        alert("متن کپی شد!");
+    }).catch(err => {
+        console.error("مشکلی پیش آمد: ", err);
+    });
+}
+
+
+        
+    </script>
+</body>
+</html>

@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>رمزنگاری نقطه</title>
+  <link rel="icon" type="image/png" href="photo/logo.png">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <style>
+    body {
+      text-align: right;
+    }
+    .navbar-nav {
+      text-align: center;
+      width: 100%;
+    }
+    .navbar-collapse {
+      display: flex;
+      justify-content: center; 
+    }
+    @font-face {
+        font-family: 'Shabnam';
+        src: url('Fonts/Shabnam.ttf') format('woff2');
+        font-weight: normal;
+        font-style: normal;
+    }
+    
+  </style>
+</head>
+<body style="font-family: Shabnam;">
+    <nav class="navbar navbar-dark bg-dark fixed-top" dir="rtl">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">رمزنگاری نقطه خط</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasDarkNavbar" aria-controls="offcanvasDarkNavbar" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="offcanvas offcanvas-end text-bg-dark" tabindex="-1" id="offcanvasDarkNavbar" aria-labelledby="offcanvasDarkNavbarLabel">
+                <div class="offcanvas-header text-center"> 
+                    <h5 class="offcanvas-title w-100" id="offcanvasDarkNavbarLabel">رمزنگاری نقطه خط</h5>
+                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                </div>
+                <div class="offcanvas-body text-center"> 
+                    <ul class="navbar-nav justify-content-center flex-grow-1">
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="index.html">خانه</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="text-to-morse.html">متن به مورس</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="morse-to-text.html">مورس به متن</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="more/Learn-more.html">بیشتر بدانید</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="more/about.html">درباره من</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </nav>
+    <br><br>
+    <div class="container mt-5">
+        <div class="row align-items-center flex-column-reverse flex-md-row">
+            <div class="col-md-6 text-right">
+                <h2>رمزنگاری نقطه خط</h2>
+                <p>این وبسایت به طور آنلاین به کاربران امکان میدهد تا متن انگلیسی خود را به کد مورس تبدیل بکنند و همینطور کد مورس مورد نظر را به زبان انگلیسی ترجمه بکنند</p>
+                
+                <div class="btn-group" role="group" aria-label="Button group with nested dropdown">
+                    <div class="btn-group" role="group">
+                      <button type="button" class="btn btn-info dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+                         شروع کنید &nbsp;
+                      </button>
+                      <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" href="morse-to-text.html">کد مورس به متن</a></li>
+                        <li><a class="dropdown-item" href="text-to-morse.html">متن به کد مورس</a></li>
+                      </ul>
+                    </div>
+                  </div>
+                  
+            </div>
+            
+            <br>
+            <div class="col-md-6">
+                <img src="photo/page1.png" class="img-fluid rounded" alt="توضیح تصویر">
+            </div>
+        </div>
+    </div>
+    
+    <br><br>
+    <div class="container mt-5">
+        <div class="row align-items-center flex-column flex-md-row">
+            <div class="col-md-6 order-2 order-md-1 text-right">
+                <h2>کد مورس چیست ؟</h2>
+            <p>کد مورس (به انگلیسی: Morse code) روشی برای انتقال پیام و اطلاعات است که در آن از یک رشته نشانه‌های بلند و کوتاهِ استاندارد به نام خط و نقطه استفاده می‌شود و همچنین در تلگراف نیز بکار گرفته می‌شود.</p>
+            <p>کد مورس در میانه دهه ۱۲۱۰ هجری خورشیدی توسط  <a href="more/samuel.html"> ساموئل مورس </a>ابداع شد و چندی بعد در ارتباطات تلگراف مورد استفاده قرار گرفت. در آغاز دهه ۱۲۸۰ هجری خورشیدی از آن به‌طور گسترده برای مخابرات رادیویی استفاده شد .</p>
+            <a href="more/samuel.html"><button type="button" class="btn btn-outline-secondary" >درباره ساموئل مورس بیشتر بدانید &nbsp; <img src="photo/box-arrow-in-up-left.svg"></button></a>
+        <br><br>
+        <a href="more/Learn-more.html"><button type="button" class="btn btn-outline-secondary" >راجب کد مورس بیشتر بدانید&nbsp; <img src="photo/box-arrow-in-up-left.svg"></button></a>
+        <br>
+        </div>
+            <div class="col-md-6 order-1 order-md-2">
+                <img src="photo/questions.jpg" class="img-fluid rounded" alt="توضیح تصویر">
+            </div>
+        </div>
+    </div>
+    
+
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
